@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="estilos.css">
     <title>Transportes Siryelo</title>
 </head>
 <body>
 
-    <nav>
+     <div id="particles"></div>
 
+    <div class="wrapper">
+        <nav>
         <div class="logo">
-            <img src="imgs/LOGO JPG SIN DIRECCION.jpg">
+            <img src="imgs/LOGO JPG SIN DIRECCION.jpg" alt="Logo" height="50" />
         </div>
         <div class="nav-links">
             <a href="#">NOSOTROS</a>
@@ -20,7 +23,60 @@
             <a href="#">SOLUCIONES</a>
             <a href="#">CONTACTO</a>
         </div>
-    </nav>
+        </nav>
+
+        <div class="hero" id="hero">
+            <div class="left-section" id="text-block">
+                <div class="title-row">
+                    <img src="imgs/LOGO JPG SIN DIRECCION.jpg" id="logo" alt="Logo">
+                    <h1>Transportes SIRYELO</h1>
+                </div>
+                <div class="top"> 
+                    <p>Transportes SYRYELO es una empresa familiar dedicada al transporte
+                        de mercancías por carretera que lleva en funcionamiento desde principios de los
+                        años 80. Fundada con el esfuerzo conjunto de sus fundadores, la compañía ha
+                        crecido de forma constante manteniendo siempre su compromiso con la puntualidad,
+                        la seguridad y el trato cercano. Con más de cuatro décadas de experiencia, se ha
+                        consolidado como un referente en el sector gracias a su profesionalidad, su
+                        conocimiento del territorio nacional y su capacidad de adaptación a las necesidades
+                        de cada cliente. A día de hoy, sigue siendo gestionada por la familia fundadora,
+                        lo que garantiza una atención personalizada y un firme compromiso con los valores
+                        que la vieron nacer.</p>
+                </div>
+            </div>
+            <img id="hero-image" src="imgs/imagen 3.jpg" alt="Imagen">
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="index.js"></script>
+
+  <script>
+    function ajustarAlturaImagen() {
+        const textBlock = document.getElementById('text-block');
+        const heroImage = document.getElementById('hero-image');
+
+        if (!textBlock || !heroImage) return;
+
+        // Medir la altura total del bloque de texto
+        const alturaTexto = textBlock.offsetHeight;
+
+        console.log('Altura texto:', alturaTexto);
+
+        // Aplicar altura a la imagen
+        heroImage.style.height = alturaTexto + 'px';
+        }
+
+        // Ejecutar después de que la página y estilos estén cargados
+        window.addEventListener('load', () => {
+        setTimeout(ajustarAlturaImagen, 100); // pequeño delay para layout estable
+        });
+        window.addEventListener('resize', () => {
+        setTimeout(ajustarAlturaImagen, 100);
+        });
+  </script>
+
+    
     
     
 </body>

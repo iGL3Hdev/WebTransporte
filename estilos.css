@@ -1,72 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    background-color: #f3f2f1;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a{
-    text-decoration: none;
+body {
+  font-family: 'Abril Fatface', serif;
+  background-color: #f3f2f1;
+  min-height: 100vh;
 }
 
-h2{
-    font-weight: 400;
+/* Fondo de partículas */
+#particles{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a1a; /* fondo oscuro detrás */
+  z-index: -1;
+  pointer-events: none;
 }
 
-nav{
-    display: flex;
+/* Marco exterior */
+.wrapper {
+background-color: rgba(0, 0, 0, 0.7); /* blanco con transparencia */
+  border: 10px double #aa5e08;
+  margin: 25px 25px 25px 25px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0 , 0.15);
+  min-height: calc(100vh - 60px);
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  border: 2px solid #3f2f2f;
+  border-radius: 12px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: calc(100% - 100px);
+  max-width: 1000px;
+}
+
+nav .logo img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #aa5e08;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.hero {
+  margin-top: 200px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start; /* cambiar a flex-start para que JS controle */
+  flex-wrap: wrap;
+}
+
+.left-section {
+  flex: 1 1 400px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+#logo {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: beige;
+  margin: 0 0 10px 0;
+}
+
+.hero p {
+  color: beige;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Imagen */
+#hero-image {
+  width: auto;
+  max-width: 500px;
+  height: auto; /* Se sobreescribirá con JS */
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+
+
+
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    border: 1px solid #3f2f2f;
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 16px;
-    padding: 12px;
-    background-color: #ffffff;
+  }
+  .left-section, #hero-image {
+    max-width: 100%;
+    flex: none;
+    width: 100%;
+    height: auto !important; /* liberamos altura para que JS no fuerce aquí */
+  }
+  #hero-image {
+    margin-top: 20px;
+    height: auto !important; /* que la imagen ajuste su altura natural */
+  }
 }
 
-nav .nav-links{
-    display: flex;
-    gap: 24px;
-}
 
-nav .nav-links a{
-    font-size: 14px;
-    color: #606060;
-    transition: all 0.3s ease;
-}
 
-nav .nav-links a:hover{
-    color: #aa5e08;
-}
 
-nav button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    font-size: 18px;
-    height: 32px;
-    width: 122px;
-    background: #000;
-    color: #ac8211;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-}
 
-nav button:hover,
-.hero .left-section .top .buttons button.doc:hover,
-.contact .items .item button:hover{
-    color: #000;
-    background: #c27a0f;
-    border-color: #dedede;
-}
 
 
