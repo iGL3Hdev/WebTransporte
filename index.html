@@ -18,10 +18,10 @@
             <img src="imgs/LOGO JPG SIN DIRECCION.jpg" alt="Logo" height="50" />
         </div>
         <div class="nav-links">
-            <a href="#">NOSOTROS</a>
-            <a href="#">FLOTA</a>
-            <a href="#">SOLUCIONES</a>
-            <a href="#">CONTACTO</a>
+            <a href="#about">NOSOTROS</a>
+            <a href="#about">FLOTA</a>
+            <a href="#about">SOLUCIONES</a>
+            <a href="#contacto">CONTACTO</a>
         </div>
         </nav>
 
@@ -46,8 +46,67 @@
             </div>
             <img id="hero-image" src="imgs/imagen 3.jpg" alt="Imagen">
         </div>
+
+
+        <div class="about" id="about">
+            <p>NOSOTROS</p>
+            <h2>Transportes SYRYELO, soluciones de transporte</h2>
+            <div class="items">
+                <div class="item">
+                    <div class="inner">
+                        <img src="imgs/imagen 1.jpg" alt="" width="350" height="350">
+                        <a href="#"><strong>Flota</strong></a>
+                        <p>
+                            En Transportes SYRYELO, contamos con una flota moderna y eficiente de camiones, diseñada para
+                            garantizar un servicio seguro, puntual y de alta calidad. Nuestra flota está compuesta por varias
+                            unidades, todas equipadas con tecnología de rastreo GPS, mantenimiento preventivo
+                            al día y capacidad para adaptarse a distintas necesidades logísticas..</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="inner">
+                        <img src="imgs/imagen 2.jpg" alt="" width="350" height="350">
+                        <a href="#"><strong>Soluciones</strong></a>
+                        <p>Ofrecemos soluciones de transporte confiables y flexibles para empresas locales, adaptadas
+                        a distintos tipos de carga. Nuestra flota de camiones garantiza entregas seguras, puntuales y
+                        eficientes, con cobertura regional y atención personalizada en cada servicio.</p>
+                    </div>
+                </div>
+        </div>
+
+        <section id="contacto" class="contacto">
+            <h2>Contacto</h2>
+            <div class="contacto-contenido">
+                <div class="datos-empresa">
+                <h3>Transportes SYRYELO, S.L.</h3>
+                <p><strong>Teléfono:</strong>987412757</p>
+                <p><strong>Movil: </strong>649851215 - 649851216</p>
+                <p><strong>Dirección:</strong> Avenida de Portugal, nº 76 - Entreplanta</p>
+                <p><strong>Email:</strong> oscarvega@siryelo.es</p>
+                </div>
+
+                <div class="formulario-contacto">
+                <h3>Solicitar información</h3>
+                <form action="mailto:oscarvega@siryelo.es" method="post" enctype="text/plain" onsubmit="alert('Se abrirá tu cliente de correo para enviar el mensaje.');">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="Nombre" required>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="Correo" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="Mensaje" rows="4" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+                </div>
+            </div>
+            </section>
+
     </div>
 
+
+    
     <footer>
             <a href="#">Terms of Service</a>
             <a href="#">Privacy Policy</a>
