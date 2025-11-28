@@ -145,6 +145,379 @@
         setTimeout(ajustarAlturaImagen, 100);
         });
   </script>
+
+  <!-- AÑADIR ESTE CÓDIGO ANTES DEL CIERRE DE </body> EN index.html -->
+
+<!-- Banner de Cookies -->
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+        <h3>🍪 Esta página web usa cookies</h3>
+        <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios, elaborar información estadística y personalizar el contenido. Puede consultar más información en nuestra <a href="legal/politica-cookies.html" target="_blank">Política de Cookies</a>.</p>
+        <div class="cookie-buttons">
+            <button id="btn-rechazar" class="btn-secundario">Rechazar</button>
+            <button id="btn-configurar" class="btn-secundario">Configurar</button>
+            <button id="btn-aceptar" class="btn-principal">Aceptar todas</button>
+        </div>
+    </div>
+</div>
+
+<!-- Panel de configuración de cookies -->
+<div id="cookie-config" class="cookie-config">
+    <div class="cookie-config-content">
+        <h3>Configuración de Cookies</h3>
+        <p>Puede seleccionar qué tipos de cookies desea aceptar:</p>
+        
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" checked disabled>
+                <strong>Cookies Necesarias</strong>
+                <span class="cookie-desc">Esenciales para el funcionamiento del sitio web. No se pueden desactivar.</span>
+            </label>
+        </div>
+        
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" id="cookies-analiticas" checked>
+                <strong>Cookies Analíticas</strong>
+                <span class="cookie-desc">Nos ayudan a entender cómo los visitantes interactúan con el sitio web (Google Analytics).</span>
+            </label>
+        </div>
+        
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" id="cookies-marketing">
+                <strong>Cookies de Marketing</strong>
+                <span class="cookie-desc">Se utilizan para mostrar publicidad relevante.</span>
+            </label>
+        </div>
+        
+        <div class="cookie-buttons">
+            <button id="btn-cancelar" class="btn-secundario">Cancelar</button>
+            <button id="btn-guardar" class="btn-principal">Guardar preferencias</button>
+        </div>
+    </div>
+</div>
+
+<!-- Estilos CSS para el banner -->
+<style>
+/* Banner de Cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(31, 31, 31, 0.98);
+    color: #fff;
+    padding: 25px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+    animation: slideUp 0.5s ease-out;
+}
+
+.cookie-banner.show {
+    display: block;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cookie-content h3 {
+    color: #aa5e08;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.cookie-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.cookie-content a {
+    color: #aa5e08;
+    text-decoration: underline;
+}
+
+.cookie-content a:hover {
+    color: #d67710;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-principal,
+.btn-secundario {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-principal {
+    background-color: #aa5e08;
+    color: #fff;
+}
+
+.btn-principal:hover {
+    background-color: #854c05;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(170, 94, 8, 0.4);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secundario:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Panel de configuración */
+.cookie-config {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
+}
+
+.cookie-config.show {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.cookie-config-content h3 {
+    color: #aa5e08;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.cookie-config-content p {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.cookie-option {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #aa5e08;
+}
+
+.cookie-option label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.cookie-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.cookie-option strong {
+    color: #333;
+    font-size: 16px;
+}
+
+.cookie-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Overlay oscuro */
+.cookie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    display: none;
+}
+
+.cookie-overlay.show {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cookie-banner {
+        padding: 20px 15px;
+    }
+    
+    .cookie-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-principal,
+    .btn-secundario {
+        width: 100%;
+    }
+    
+    .cookie-config {
+        padding: 25px;
+        width: 95%;
+    }
+}
+</style>
+
+<!-- Script JavaScript -->
+<script>
+// Esperar a que cargue el DOM
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieConfig = document.getElementById('cookie-config');
+    const btnAceptar = document.getElementById('btn-aceptar');
+    const btnRechazar = document.getElementById('btn-rechazar');
+    const btnConfigurar = document.getElementById('btn-configurar');
+    const btnCancelar = document.getElementById('btn-cancelar');
+    const btnGuardar = document.getElementById('btn-guardar');
+    
+    // Crear overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'cookie-overlay';
+    document.body.appendChild(overlay);
+    
+    // Función para verificar si ya se aceptaron/rechazaron cookies
+    function checkCookieConsent() {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 1000); // Mostrar después de 1 segundo
+        } else if (consent === 'accepted' || consent === 'custom') {
+            // Cargar Google Analytics u otras cookies si están aceptadas
+            loadAnalytics();
+        }
+    }
+    
+    // Función para cargar Google Analytics
+    function loadAnalytics() {
+        const analiticas = localStorage.getItem('cookiesAnaliticas');
+        if (analiticas === 'true') {
+            // Aquí irían tus scripts de Google Analytics
+            console.log('Google Analytics cargado');
+            // Ejemplo:
+            // (function(i,s,o,g,r,a,m){...})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            // ga('create', 'TU-ID-DE-ANALYTICS', 'auto');
+            // ga('send', 'pageview');
+        }
+    }
+    
+    // Aceptar todas las cookies
+    btnAceptar.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        localStorage.setItem('cookiesAnaliticas', 'true');
+        localStorage.setItem('cookiesMarketing', 'true');
+        cookieBanner.classList.remove('show');
+        loadAnalytics();
+    });
+    
+    // Rechazar cookies opcionales
+    btnRechazar.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'rejected');
+        localStorage.setItem('cookiesAnaliticas', 'false');
+        localStorage.setItem('cookiesMarketing', 'false');
+        cookieBanner.classList.remove('show');
+    });
+    
+    // Mostrar panel de configuración
+    btnConfigurar.addEventListener('click', function() {
+        cookieBanner.classList.remove('show');
+        cookieConfig.classList.add('show');
+        overlay.classList.add('show');
+        
+        // Cargar preferencias guardadas
+        document.getElementById('cookies-analiticas').checked = 
+            localStorage.getItem('cookiesAnaliticas') !== 'false';
+        document.getElementById('cookies-marketing').checked = 
+            localStorage.getItem('cookiesMarketing') === 'true';
+    });
+    
+    // Cancelar configuración
+    btnCancelar.addEventListener('click', function() {
+        cookieConfig.classList.remove('show');
+        overlay.classList.remove('show');
+        cookieBanner.classList.add('show');
+    });
+    
+    // Guardar preferencias
+    btnGuardar.addEventListener('click', function() {
+        const analiticas = document.getElementById('cookies-analiticas').checked;
+        const marketing = document.getElementById('cookies-marketing').checked;
+        
+        localStorage.setItem('cookieConsent', 'custom');
+        localStorage.setItem('cookiesAnaliticas', analiticas);
+        localStorage.setItem('cookiesMarketing', marketing);
+        
+        cookieConfig.classList.remove('show');
+        overlay.classList.remove('show');
+        
+        if (analiticas) {
+            loadAnalytics();
+        }
+    });
+    
+    // Cerrar al hacer clic en overlay
+    overlay.addEventListener('click', function() {
+        cookieConfig.classList.remove('show');
+        overlay.classList.remove('show');
+        cookieBanner.classList.add('show');
+    });
+    
+    // Verificar consentimiento al cargar la página
+    checkCookieConsent();
+});
+</script>
     
 </body>
 </html>
