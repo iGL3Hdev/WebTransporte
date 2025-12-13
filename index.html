@@ -10,7 +10,7 @@
 </head>
 <body>
 
-     <div id="particles"></div>
+    <div id="particles-background"></div>
 
     <div class="wrapper">
         <nav>
@@ -24,6 +24,11 @@
             <a href="#contacto">CONTACTO</a>
         </div>
         </nav>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+            <i class='bx bx-sun' id="theme-icon"></i>
+        </button>
+
 
         <div class="hero" id="hero">
             <div class="left-section" id="text-block">
@@ -47,10 +52,10 @@
             <img id="hero-image" src="imgs/imagen 3.jpg" alt="Imagen">
         </div>
 
-
         <div class="about" id="about">
             <p>NOSOTROS</p>
             <h2>Transportes SYRYELO, soluciones de transporte</h2>
+            <div id="particles"></div>
             <div class="items">
                 <div class="item">
                     <div class="inner">
@@ -146,7 +151,7 @@
         });
   </script>
 
-  <!-- AÑADIR ESTE CÓDIGO ANTES DEL CIERRE DE </body> EN index.html -->
+  <!-- AÑADIR ESTE CÓDIGO ANTES DEL CIERRE DEL INDEX-->
 
 <!-- Banner de Cookies -->
 <div id="cookie-banner" class="cookie-banner">
@@ -197,218 +202,6 @@
         </div>
     </div>
 </div>
-
-<!-- Estilos CSS para el banner -->
-<style>
-/* Banner de Cookies */
-.cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(31, 31, 31, 0.98);
-    color: #fff;
-    padding: 25px;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    display: none;
-    animation: slideUp 0.5s ease-out;
-}
-
-.cookie-banner.show {
-    display: block;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-.cookie-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.cookie-content h3 {
-    color: #aa5e08;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.cookie-content p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #e0e0e0;
-}
-
-.cookie-content a {
-    color: #aa5e08;
-    text-decoration: underline;
-}
-
-.cookie-content a:hover {
-    color: #d67710;
-}
-
-.cookie-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn-principal,
-.btn-secundario {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.btn-principal {
-    background-color: #aa5e08;
-    color: #fff;
-}
-
-.btn-principal:hover {
-    background-color: #854c05;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(170, 94, 8, 0.4);
-}
-
-.btn-secundario {
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-}
-
-.btn-secundario:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-}
-
-/* Panel de configuración */
-.cookie-config {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-    z-index: 10000;
-    max-width: 600px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    display: none;
-}
-
-.cookie-config.show {
-    display: block;
-    animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -45%);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-}
-
-.cookie-config-content h3 {
-    color: #aa5e08;
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-.cookie-config-content p {
-    margin-bottom: 25px;
-    color: #333;
-}
-
-.cookie-option {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border-left: 4px solid #aa5e08;
-}
-
-.cookie-option label {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    cursor: pointer;
-}
-
-.cookie-option input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    align-self: flex-start;
-}
-
-.cookie-option strong {
-    color: #333;
-    font-size: 16px;
-}
-
-.cookie-desc {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-}
-
-/* Overlay oscuro */
-.cookie-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9998;
-    display: none;
-}
-
-.cookie-overlay.show {
-    display: block;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .cookie-banner {
-        padding: 20px 15px;
-    }
-    
-    .cookie-buttons {
-        flex-direction: column;
-    }
-    
-    .btn-principal,
-    .btn-secundario {
-        width: 100%;
-    }
-    
-    .cookie-config {
-        padding: 25px;
-        width: 95%;
-    }
-}
-</style>
 
 <!-- Script JavaScript -->
 <script>
@@ -516,6 +309,40 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Verificar consentimiento al cargar la página
     checkCookieConsent();
+});
+</script>
+
+<!-- PASO 3: AÑADIR ESTE SCRIPT JAVASCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    
+    // Verificar si hay un tema guardado en localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeIcon.classList.remove('bx-sun');
+        themeIcon.classList.add('bx-moon');
+    }
+    
+    // Cambiar tema al hacer clic
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+            // Cambiar a modo oscuro
+            themeIcon.classList.remove('bx-sun');
+            themeIcon.classList.add('bx-moon');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            // Cambiar a modo claro
+            themeIcon.classList.remove('bx-moon');
+            themeIcon.classList.add('bx-sun');
+            localStorage.setItem('theme', 'light');
+        }
+    });
 });
 </script>
     
